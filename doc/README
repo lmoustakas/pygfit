@@ -1,0 +1,77 @@
+Hi Lexi,
+
+Anthony tells me you want to try out pygfit for a project of yours.  I've attached the tarball for pygfit to this email.  Just unzip it and place the pygfit folder in either your working directory or your python path.  It's intended to be run from the command line.  The basic calling sequence is:
+
+/path/to/pygfit/pygfit.py config_file log_file warn_file
+
+You might have to edit the first line to point to your python executable if it isn't correct for your system.  You can leave out any of the file names and instead they will default to:
+
+/path/to/pygfit/pygfit.py pygfit.config pygfit.log pygfit.warn
+
+You can dump a configuration file with all the default settings
+
+/path/to/pygfit/pygfit.py --config > pygfit.config
+
+I've made up a functional pygfit example.  It's about 2 megs so I stuck it on my website instead of attaching it to this email:
+
+astro.ufl.edu/~cmancone/example.tar.gz
+
+to run it make sure pygfit is installed, unzip the example files, and then just type:
+
+/path/to/pygfit/pygfit.py
+
+It will generate an output catalog called 'pygfit.cat'.  Right now it is set to output a binary fits table.  If you prefer ascii files just edit pygfit.config and set OUTPUT_FORMAT to 'ascii'
+
+Here is a description of the source extractor configuration file:
+
+## source extractor settings ##
+pygfit uses source extractor to detect objects in the low resolution images.  It will only attempt to deblend objects in the low resolution image if they are found by the source extractor run, so make sure and tweak the source extractor run appropriately.  It is best to minimize the amount of deblending done by source extractor, since that is obviously the whole point of pygfit.  So the first set of parameters controls this source extractor run, which pygfit executes itself.  You just have to tell it the filename of a valid source extractor configuration file (EXTRACTOR_CONFIG), an output name for the source extractor catalog (EXTRACTOR_CATALOG), the location of the source extractor executable (EXTRACTOR_CMD), and the name of the source extractor parameters file (EXTRACTOR_PARAMS).  You don't have to make he source extractor parameters file yourself, as it is generated automatically by pygfit - pygfit just needs to know where to keep it.
+
+## high resolution catalog settings ##
+For both input and output it will work with either ascii files or fits binary tables depending on your preference.  It will automatically detect which type your input catalog is.  The details for the high resolution catalog are set by the HRES_CATALOG, HRES_ROTANGLE, and HRES_PIXSCALE fields.  These should be pretty self-explanatory.  In the default configuration file there is a large block after the high resolution catalog settings called "Column layout of the high resolution catalog".  This set of parameters tells pygfit where to find everything it needs in the high resolution catalog.  If your input catalog is an ascii file, then these parameters should be the zero-indexed column number that corresponds to the given data field.  For example, if your first column is the model type (which should be a string of either 'point' or 'sersic') then MODEL_TYPE should be set to 0.  If your input catalog is a binary fits table, then instead of column numbers these parameters should be set to the appropriate column names in the high resolution catalog.  For both types of input catalogs the MAG and POINT_MAG columns are allowed to point to the same column in the catalog, if desired.
+
+## low resolution image settings ##
+Next up are the configuration settings for the low resolution image.  You need the image, an rms image, and a psf image.  The psf file should be an odd-sized square with the PSF star centered in the image.  If it isn't a square, or isn't odd, then pygfit will stick a zero-value pixel border around it to make it so.
+
+## Fitting settings ##
+pygfit is multithreaded and N_THREADS sets the number of threads to use.  Unfortunately there is a lot of data to communicate to new processes, and it isn't very efficient.  In my tests using 8 threads only sped it up by a factor of 3.  Memory needs (which can be very high) don't usually let you use that many threads anyway.  Before fitting pygfit will attempt to measure an astrometric offset between the high resolution catalog and low resolution image.  GLOBAL_MAX_SHIFT gives the maximum astrometric offset searched for and corrected for (in arcseconds).  N_ALIGN gives the maximum number of alignment objects used, and ALIGN_MIN_MAG and ALIGN_MAX_MAG set the magnitude range and object must fall in to be used in the alignment step.  Objects have to be isolated to be included in the alignment, so you might have to use a borader magnitude range than expected to find enough isolated objects.
+
+During the fitting the positions of the objects are allowed to jitter individually by a small amount set by MAX_SHIFT (in arcseconds).  Fitting is limited to a magnitude range set by MIN_MAG and MAX_MAG.  This lets you exclude very bright objects which can take a very long time to fit and also exclude things that are fainter than you might care about.  Finally, PAD_LENGTH sets the size of the padding region to use.  Before modeling the images are buffered by a border of this size to leave room for interpolation and convolution.
+
+## output settings ##
+These should be relatively self-explanatory.  Three of note are OUTPUT_CATALOG which is the filename of the output catalog and OUTPUT_FORMAT which can be either 'fits' or 'ascii' and tells pygfit whether or not to output a fits binary table or ascii file.  There are many output columns and if you don't want them all in your output file you can tell them which to output (and what order to put them in).  Here are the allowed output columns and a brief description of what they are:
+
+lres_id          The object id from the low resolution catalog (source extractor 'number')
+hres_id          The object id from the high resolution catalog
+nblend           The number of objects in the blend
+nearest          The nearest object in the blend
+model            The model type 'sersic' or 'point'
+ra               Right Ascension
+dec              Declination
+x                X coordinate from low resolution image
+y                Y coordinate from low resolution image
+img_x            X coordinate on low resolution image stamp
+img_y            Y coordinate on low resolution image stamp
+mag              Fitted magnitude
+mag_image        Magnitude in final model image (not very useful)
+mag_initial      Magnitude in original model image (a diagnostic explained below)
+mag_hres         Magnitude from the high resolution catalog
+mag_brightest    Magnitude of the brightest object in the blend
+mag_auto         Auto magnitude from source extractor run
+re_hres          Re in high resolution image pixels
+re_lres          Re in low resolution image pixels
+re_arcsecs       Re in arcseconds
+n                Sersic index
+pa               Position angle
+ba               Axis ratio
+chisq_nu         Reduced chisq of fit
+chisq            Chisq of fit
+nf               Degrees of freedom from fit
+residuals        Magnitude of residuals, -2.5*log( sum( resiudals ) ) + zeropoint: negative magnitude if sum( residuals ) < 0
+residuals_rms    RMS of residuals
+residuals_median Median residual value
+residuals_max    Maximum value in residuals
+residuals_min    Minimum value in residuals
+
+## final note ##
+At the moment the only remaining loose end is in model generation.  It has a hard time with models with very high sersic indexes (usually n >~ 7.0), especially if they also have a very small Re.  In these cases the integrator will complain, and you'll get some ugly looking warnings output to the screen.  Despite these warnings, it seems that pygfit still works fine.  There is a diagnostic you can run to verify this.  From your output make a plot of Sersic index versus mag_hres - mag_initial.  Nominally, mag_hres should equal mag_initial if the modeling worked properly.  This never happens in practice because the model image has a finite size, and so mag_initial is effectively an uncorrected aperture magntiude.  So, mag_inital should always be fainter than mag_hres, and with a bit of scatter.  It should also be a weak function of sersic index because larger sersic indexes have more extended wings.  As long as everything falls along a nice sequence in sersic index versus mag_hres-mag_initial space, then the modeling worked fine and you can safely ignore any integrator warnings.  If anything lies clearly outside this sequence then the modeling process failed for those objects and their fitted magnitudes are thereby wrong.  Again, this is a potential problem for very peaky stuff (high sersic index), although I think the integrator pretty much always gets things right even when it complains.
