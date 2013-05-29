@@ -79,7 +79,7 @@ Finally, the output catalog is generated.  This consists of the final fluxes mea
 
 \begin{figure*}
 \epsscale{1.0}
-\plotone{flowchart.eps}
+\plotone{flowchart.pdf}
 \caption{A flow chart of \pygfit{}'s procedure.  Rectangles denote computational processes executed by \pygfit{} while the page symbols denote data products created by or used by \pygfit{}.  The five data products along the top are inputs which must be provided to \pygfit{}.}\label{fig:flow_chart}
 \end{figure*}
 
@@ -133,7 +133,7 @@ Extensive testing has shown that this methodology provides a reasonable executio
 
 \begin{figure*}
 \epsscale{1.0}
-\plotone{342_panels.eps}
+\plotone{342_panels.pdf}
 \caption{Original images (top row) and residuals (bottom row) from our \galfit{} and \pygfit{} runs in the core of a high redshift ($z=1.243$) galaxy cluster.  From left to right the images correspond to WFC3/F160W, R, H, and $4.5\mu$m.  The WFC3/F160W image was fit with \galfit{}, while all other bands were fit with \pygfit{}.  All panels show the same field of view, and the scale in the top left panel is 10$^{\prime\prime}$ long.}\label{fig:residuals}
 \end{figure*}
 
@@ -155,7 +155,7 @@ After fitting has completed for all low resolution sources \pygfit{} generates a
 
 \begin{figure*}
 \epsscale{1.0}
-\plotone{problems.eps}
+\plotone{problems.pdf}
 \caption{Three examples of cases where \pygfit{} can fail.  The top row of panels shows the F160W images used to create the HRC.  The center row of panels shows the LRI with the same field of view, while the bottom row of panels shows the residuals of the LRI after fitting.  The LRI for the left uses ground-based R band imaging, while the example in the center is taken from the $4.5\mu$m imaging and the example on the right is taken from the IRAC $3.6\mu$m imaging.  The left column shows a galaxy with extended features which cannot be described by a \sersic{} profile.  The center column shows a galaxy which is isolated in F160W but which is blended with another source in $4.5\mu$m.  The right column shows a galaxy near the edge of the F160W image which is blended with a bright source which is outside of the F160W image.  Further details are in the text.}\label{fig:problems}
 \end{figure*}
 
@@ -185,13 +185,13 @@ Once \pygfit{} runs on all simulated frames, a final catalog is created with inp
 
 \begin{figure*}
 \epsscale{1.0}
-\plotone{mag_sims.eps}
+\plotone{mag_sims.pdf}
 \caption{(Top) Input magnitude versus input magnitude minus output magnitude as measured by \pygfit{} simulations for three filters: R (left), J (center), and $3.6\mu$m (right).  (Bottom) Magnitude error as a function of magnitude.  The solid circles show the error of \pygfit{}'s magnitude estimates in magnitude bins.  For comparison the open circles show the resulting error when a $4^{\prime\prime}$ diameter aperture-magnitude is used instead of \pygfit{}.  The solid line shows the uncertainty introduced by sky noise for an aperture with a $4^{\prime\prime}$ diameter.}\label{fig:mag_sims}
 \end{figure*}
 
 \begin{figure*}
 \epsscale{1.0}
-\plotone{close_sim.eps}
+\plotone{close_sim.pdf}
 \caption{Difference between input and output magnitude for simulated galaxies as a function of flux ratio (left) and separation relative to the size of the PSF (right).  To cleanly separate the two competing effects the left panel only includes galaxies separated by at least 1 PSF FWHM, and the right panel only includes galaxies which are the brightest galaxy in the pair.}\label{fig:close_sim}
 \end{figure*}
 
@@ -201,7 +201,7 @@ We show the results of our simulations for three filters (R, J, and $3.6\mu$m) i
 
 \begin{figure*}
 \epsscale{1.0}
-\plotone{mag_sims_cut.eps}
+\plotone{mag_sims_cut.pdf}
 \caption{Same as Figure \ref{fig:mag_sims}, except simulated galaxies with separations $<60\%$ of the PSF radius or flux ratios $<0.25$ have been cut from the sample.}\label{fig:mag_sims_cut}
 \end{figure*}
 
@@ -211,7 +211,7 @@ However, \pygfit{} does not reach the sky-noise limit for a $4^{\prime\prime}$ a
 
 \begin{figure*}
 \epsscale{0.95}
-\plotone{ch1_error_correlations.eps}
+\plotone{ch1_error_correlations.pdf}
 \caption{\pygfit{} errors as measured with our simulations for our $3.6\mu$m galaxies with $[3.6] < 19.0$ versus the number of objects in the blend (top left), the distance to the nearest blended object (top right), the flux ratio between the object and its nearest neighbor (bottom right), and the fraction of the blend flux accounted for by the simulated object (bottom left).}\label{fig:ch1_error_correlations}
 \end{figure*}
 
