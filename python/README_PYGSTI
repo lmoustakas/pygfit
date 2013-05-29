@@ -1,0 +1,80 @@
+The pygsti.py file is executable (assuming it has write permissions).  To run it from the command line just call it and give the name of a pygsti configuration file as the only parameter.  If you omit the configuration file, it will look for one called 'pygsti.config' in the current directory.  You can have it dump a default configuration file by calling:
+
+pygsti.py --config
+
+from the command line.  That's a good way to get started.  In the following description any words in all uppercase refer to a configuration parameter in the configuration file.
+
+The first set of configuration parmaeters tell pygsti where to find the fits image it should add galaxies to (IMAGE) as well as the psf image (PSF) and the magnitude zeropoint for the input image (MAGZERO).  There are also some options for a mask image which I will describe later.
+
+Input catalog:
+
+You need an input catalog that tells pygsti the positions, magnitudes, and (if needed) sersic parameters for the artificial sources to add to the image.  The input catalog can either be an ascii file or a binary fits table (pygsti automatically determines which your catalog is).  For an ascii file lines beginning with '#' are treated as comments.  For each artificial source the input catalog needs to contain model type, an ID, RA, DEC, and the magnitude.  The model type can be either 'sersic' or 'point'.  If it is 'sersic' you must also specify the sersic parameters in the input catalog: Re, sersic index (n), position angle (PA), and axis ratio (BA).  You have to tell pygsti where to find each parameter in the configuration file, and that is the purpose of the 'Catalog Format' configuration parameters.  For an ascii input file you tell pygsti which (zero-indexed) column contains each model parameter.  For a binary fits table you give pygsti the name of the column in the binary fits table which contains the given parameter.  There are two magnitude configuration parameters: MAG and POINT_MAG.  The former is used as the magnitude for sersic sources, and the latter for point sources.  They can both point to the same column in your input catalog if needed.  The RE_ARCSEC parameter lets you specify whether the half-light radii in your input catalog are in arcseconds or pixels.  If it is not in arcseconds, then you also have to specify the pixel scale of the input catalog in degrees per pixel (PIXSCALE).
+
+Modeling:
+
+There are only a few modeling parameters.  PAD_LENGTH sets the amount of pixels to pad the image by when interpolating and convolving.  A border helps to minimize edge-of-image problems, but larger sizes obviously lead to larger execution times.  MODEL_SIZE allows you to specify how large of an image should be created for each artificial object.  The size of the image for each artificial object will be MODEL_SIZE*Re.  Point source objects will always be the size of your PSF image.  You can also specify a minimum and maximum model size (MIN_SIZE, MAX_SIZE) to make sure the aritifical objects always end up with image sizes in a reasonable range.
+
+Catalog generation:
+
+pygsti has a number of modes for generating artifical objects from the input catalog.  The simplest is to just use the input catalog exactly as it is.  To do this just set AS_IS to true.  Alternatively, you can set AS_IS to false and pygsti will randomly select GALS_PER_FRAME objects from the input catalog and add them to the image, write that out, and then repeat the process NUMBER_FRAMES times.  In both cases you can also set RANDOM_POSITIONS to true, and then pygsti will choose random positions for all artificial sources.  When it does this it will never stick a source where the input image has a value of nan, or where the mask file (MASK) has a value of MASK_VALUE.  This is the only time the mask file is used: to specify where not to randomly place artifical sources.  Next you can tell pygsti to also randomize the source magnitudes (RANDOM_MAGS) in which case it will generate random magnitudes from the luminosity function of the input catalog.
+
+Output parameters:
+
+You can specify what directory you would like the simulated objects to be output to (SIM_DIR).  You can then specify the name of the output image (IMAGE_OUTPUT), the filename for a DS9 region file showing the locations of the simulated objects (REGION_OUTPUT), and a filename to output a catalog of the simulated objects (CATALOG_OUTPUT).  This can be different from the input catalog if things like RANDOM_POSITIONS are turned on.  You can specify whether you want this output catalog to be in fits or ascii format (OUTPUT_FORMAT).  If you want pygsti to output an individual image for each artificial source it generates, then set OUTPUT_MODELS to true.
+
+If you set AS_IS to false then pygsti will generate NUMBER_FRAMES artifical images.  To handle this you can either set INDIVIDUAL_DIRS to true so that each frame is output to its own directory, or you can set the _SUFFIX parameters so that all the frames are output to the same directory but with different filenames.
+
+So for instance the following configuration:
+
+AS_IS		True
+INDIVIDUAL_DIRS	False
+SIM_DIR		sims
+CATALOG_OUTPUT	sim.cat
+IMAGE_OUTPUT	sim.fits
+REGION_OUTPUT	sim.reg
+
+will generate three output files:
+
+sims/sim.cat
+sims/sim.fits
+sims/sim.reg
+
+With AS_IS set to False you can try this sort of configuration:
+
+AS_IS		False
+GALS_PER_FRAME	5
+NUMBER_FRAMES	2
+INDIVIDUAL_DIRS	True
+SIM_DIR		sims
+CATALOG_OUTPUT	sim.cat
+IMAGE_OUTPUT	sim.fits
+REGION_OUTPUT	sim.reg
+
+Which gives 6 files:
+
+sims/0/sim.cat
+sims/0/sim.fits
+sims/0/sim.reg
+sims/1/sim.cat
+sims/1/sim.fits
+sims/1/sim.reg
+
+Or you can specify a naming convention:
+
+AS_IS		False
+GALS_PER_FRAME	5
+NUMBER_FRAMES	2
+INDIVIDUAL_DIRS	False
+SIM_DIR		sims
+CATALOG_SUFFIX	_sim.cat
+IMAGE_SUFFIX	_sim.fits
+REGION_SUFFIX	_sim.reg
+
+which gives this:
+
+sims/0_sim.cat
+sims/0_sim.fits
+sims/0_sim.reg
+sims/1_sim.cat
+sims/1_sim.fits
+sims/1_sim.reg
