@@ -4,3 +4,5 @@ pygfit
 git config http.postBuffer 524288000
 ]
 
+Update 7 June 2013
+
