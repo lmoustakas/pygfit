@@ -1,0 +1,89 @@
+Warnings and errors for pygfit.config at 2013-06-10 16:28:50.585495
+Failed to fit lres id number: 2.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=39 must not exceed M=0
+Failed to fit lres id number: 1.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=30 must not exceed M=0
+Failed to fit lres id number: 61.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=30 must not exceed M=0
+Failed to fit lres id number: 7.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=15 must not exceed M=0
+Failed to fit lres id number: 81.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=9 must not exceed M=0
+Failed to fit lres id number: 24.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=12 must not exceed M=0
+Failed to fit lres id number: 67.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=15 must not exceed M=0
+Failed to fit lres id number: 9.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=15 must not exceed M=0
+Failed to fit lres id number: 92.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=12 must not exceed M=0
+Failed to fit lres id number: 64.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=6 must not exceed M=0
+Failed to fit lres id number: 84.
+Traceback:
+Traceback (most recent call last):
+  File "/astro/data/siesta1/soft/pygfit_ag/gblend.py", line 500, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/usr/lib64/python2.6/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=9 must not exceed M=0
