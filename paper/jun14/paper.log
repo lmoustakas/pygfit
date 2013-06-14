@@ -1,0 +1,405 @@
+This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2009.12.11)  14 JUN 2013 14:55
+entering extended mode
+**paper
+(./paper.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, basque, bulgarian, coptic, welsh, czech, slovak, german, ngerman, d
+anish, esperanto, spanish, catalan, galician, estonian, finnish, french, greek,
+ monogreek, ancientgreek, croatian, hungarian, interlingua, ibycus, indonesian,
+ icelandic, italian, latin, mongolian, dutch, norsk, polish, portuguese, romani
+an, russian, slovenian, uppersorbian, serbian, swedish, turkish, ukenglish, ukr
+ainian, loaded.
+(./emulateapj.cls
+Document Class: emulateapj 
+\bibbaselineskip=\skip41
+(/usr/share/texmf/tex/latex/revtex/revtex4.cls
+Document Class: revtex4 2001/08/02 v4.0 (http://publish.aps.org/revtex4/ for do
+cumentation)
+ Copyright (c) 2001 The American Physical Society.
+ mailto:revtex@aps.org
+ Licensed under the LPPL:
+http://www.ctan.org/tex-archive/macros/latex/base/lppl.txt
+ Arthur Ogawa <ogawa@teleport.com>
+ Based on work by David Carlisle <david@dcarlisle.demon.co.uk>.
+ltxutil: portions licensed from W. E. Baxter (web@superscript.com)
+Class revtex4 Info: Repairing broken LateX \@sect on input line 596.
+\intertabularlinepenalty=\count79
+\@tbpen=\count80
+\@arstrutbox@hline=\box26
+Class revtex4 Info: Repairing broken LaTeX \@xbitor on input line 1610.
+ltxgrid: portions licensed from W. E. Baxter (web@superscript.com)
+\c@linecount=\count81
+\output=\toks14
+\@protection@box=\box27
+\@topmark@saved=\toks15
+\footins@saved=\box28
+\pagesofar=\box29
+\footbox=\box30
+\pagegrid@col=\count82
+Class revtex4 Info: Incorporating package {textcase}  [1998/11/12 v0.06 Text on
+ly upper/lower case changing (DPC)]. on input line 3682.
+(/usr/share/texmf/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+)
+\c@affil=\count83
+\absbox=\box31
+\c@part=\count84
+\c@section=\count85
+\c@subsection=\count86
+\c@subsubsection=\count87
+\c@paragraph=\count88
+\c@subparagraph=\count89
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count90
+\c@table=\count91
+
+(/usr/share/texmf/tex/latex/natbib/natbib.sty
+Package: natbib 2007/02/05 8.0 (PWD)
+\bibhang=\skip44
+\bibsep=\skip45
+LaTeX Info: Redefining \cite on input line 602.
+\c@NAT@ctr=\count92
+)
+\widetext@top=\box32
+\widetext@bot=\box33
+
+(/usr/share/texmf/tex/latex/revtex/revsymb.sty
+Package: revsymb 2001/08/02 v4.0 (http://publish.aps.org/revtex4/ for documenta
+tion)
+LaTeX Info: Redefining \REV@mathfrak on input line 118.
+))
+
+Class revtex4 Warning: No Society specified, using generic APS style.
+
+(/usr/share/texmf/tex/latex/revtex/aps.rtx
+File: aps.rtx 2001/08/02 v4.0 (http://publish.aps.org/revtex4/ for documentatio
+n)
+)
+(/usr/share/texmf/tex/latex/revtex/10pt.rtx
+File: 10pt.rtx 2001/08/02 v4.0 (http://publish.aps.org/revtex4/ for documentati
+on)
+)
+(/usr/share/texmf/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks17
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+LaTeX Info: Redefining \frak on input line 135.
+LaTeX Info: Redefining \Bbb on input line 137.
+))
+(/usr/share/texmf/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip46
+\LTright=\skip47
+\LTpre=\skip48
+\LTpost=\skip49
+\LTchunksize=\count93
+\LTcapwidth=\dimen104
+\LT@head=\box34
+\LT@firsthead=\box35
+\LT@foot=\box36
+\LT@lastfoot=\box37
+\LT@cols=\count94
+\LT@rows=\count95
+\c@LT@tables=\count96
+\c@LT@chunks=\count97
+\LT@p@ftn=\toks18
+)
+(/usr/share/texmf/tex/generic/epsf/epsf.sty
+This is `epsf.tex' v2.7.3 <23 July 2005>
+\epsffilein=\read1
+\epsfframemargin=\dimen105
+\epsfframethickness=\dimen106
+\epsfrsize=\dimen107
+\epsftmp=\dimen108
+\epsftsize=\dimen109
+\epsfxsize=\dimen110
+\epsfysize=\dimen111
+\pspoints=\dimen112
+)
+\c@front@matter@foot@note=\count98
+\alt@affil@toks=\toks19
+\alt@affil@toks@count=\toks20
+\keys@width=\skip50
+\c@lastfootnote=\count99
+\c@remember@figure@num=\count100
+\c@remember@table@num=\count101
+\bibindent=\dimen113
+\plot@width=\skip51
+\c@table@save=\count102
+\table@note@skip=\skip52
+\deluxe@table@width=\skip53
+\@d@t@a=\skip54
+\c@deluxe@table@num=\count103
+\abovedeluxetableskip=\skip55
+\belowdeluxetableskip=\skip56
+\DT@p@ftn=\toks21
+\pt@column=\count104
+\pt@ncol=\count105
+) (./paper.aux)
+\openout1 = `paper.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+Class revtex4 Info: Patching LaTeX tabular. on input line 24.
+Class revtex4 Info: Patching unrecognized longtable package. (Proceeding with f
+ingers crossed) on input line 24.
+Class revtex4 Info: cite was not loaded (OK!) on input line 24.
+Class revtex4 Info: multicol was not loaded (OK!) on input line 24.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 43.
+ (/usr/share/texmf/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 43.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+
+Class revtex4 Warning: Assuming \noaffiliation for Conor L. Mancone\textsupersc
+ript {1}, Anthony H. Gonzalez\textsuperscript {1}, Leonidas A. Moustakas\textsu
+perscript {2}, Andrew Price\textsuperscript {2} .
+
+
+Package natbib Warning: Citation `wfc3handbook' on page 1 undefined on input li
+ne 50.
+
+
+Underfull \hbox (badness 2158) in paragraph at lines 50--51
+[]\OT1/cmr/m/n/10 Astronomy has in-creas-ingly ben-e-fited from high-
+ []
+
+
+Package natbib Warning: Citation `soto99' on page 1 undefined on input line 52.
+
+
+
+Package natbib Warning: Citation `labbe05' on page 1 undefined on input line 52
+.
+
+
+Package natbib Warning: Citation `tfit' on page 1 undefined on input line 52.
+
+
+Package natbib Warning: Citation `desantis07' on page 1 undefined on input line
+ 52.
+
+
+Package natbib Warning: Citation `tfit' on page 1 undefined on input line 52.
+
+
+Package natbib Warning: Citation `desantis07' on page 1 undefined on input line
+ 52.
+
+
+Package natbib Warning: Citation `tfit' on page 1 undefined on input line 52.
+
+[1]
+
+Package natbib Warning: Citation `komatsu11' on page 2 undefined on input line 
+58.
+
+
+Package natbib Warning: Citation `mopex' on page 2 undefined on input line 64.
+
+
+Package natbib Warning: Citation `stetson87' on page 2 undefined on input line 
+64.
+
+
+Package natbib Warning: Citation `peng02' on page 2 undefined on input line 70.
+
+
+
+Package natbib Warning: Citation `peng10' on page 2 undefined on input line 70.
+
+
+
+Package natbib Warning: Citation `galapagos' on page 2 undefined on input line 
+70.
+
+
+Package natbib Warning: Citation `bertin96' on page 2 undefined on input line 7
+2.
+
+File: flowchart.eps Graphic file (type eps)
+<flowchart.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
+
+ []
+
+[2] [3]
+Underfull \hbox (badness 1281) in paragraph at lines 94--95
+\OT1/cmr/m/n/10 the LRI to re-move its con-tri-bu-tion from the low-
+ []
+
+
+Package natbib Warning: Citation `peng02' on page 4 undefined on input line 116
+.
+
+
+Package natbib Warning: Citation `peng02' on page 4 undefined on input line 128
+.
+
+
+Package natbib Warning: Citation `peng10' on page 4 undefined on input line 128
+.
+
+[4]
+File: 342_panels.eps Graphic file (type eps)
+ <342_panels.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+
+ []
+
+File: problems.eps Graphic file (type eps)
+<problems.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 159--159
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--159
+
+ []
+
+
+Package natbib Warning: Citation `mancone13' on page 5 undefined on input line 
+162.
+
+
+Package natbib Warning: Citation `galapagos' on page 5 undefined on input line 
+162.
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 164--165
+\OT1/cmr/m/n/10 their resid-u-als af-ter fit-ting in the cen-ter of ISCS
+ []
+
+
+Package natbib Warning: Citation `irac' on page 5 undefined on input line 166.
+
+[5] [6] [7]
+File: mag_sims.eps Graphic file (type eps)
+ <mag_sims.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+
+ []
+
+File: close_sim.eps Graphic file (type eps)
+<close_sim.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+
+ []
+
+File: mag_sims_cut.eps Graphic file (type eps)
+<mag_sims_cut.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
+
+ []
+
+File: ch1_error_correlations.eps Graphic file (type eps)
+<ch1_error_correlations.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
+
+ []
+
+[8] [9]
+No file paper.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[10] (./paper.aux) ) 
+Here is how much of TeX's memory you used:
+ 2850 strings out of 94087
+ 33847 string characters out of 1167528
+ 101244 words of memory out of 3500000
+ 6111 multiletter control sequences out of 10000+50000
+ 12547 words of font info for 52 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 35i,6n,28p,1454b,295s stack positions out of 5000i,500n,6000p,200000b,5000s
+
+Output written on paper.dvi (10 pages, 62100 bytes).

@@ -1,0 +1,65 @@
+\relax 
+\citation{wfc3handbook}
+\citation{soto99}
+\citation{labbe05}
+\citation{tfit}
+\citation{desantis07}
+\citation{tfit}
+\citation{desantis07}
+\citation{tfit}
+\newlabel{FirstPage}{{}{1}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{}}
+\newlabel{sec:intro}{{1}{1}{}{}{}}
+\citation{komatsu11}
+\citation{mopex}
+\citation{stetson87}
+\citation{peng02}
+\citation{peng10}
+\citation{galapagos}
+\citation{bertin96}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Procedure}{2}{}}
+\newlabel{sec:procedure}{{2}{2}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Overview}{2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Object Detection and Segmentation}{2}{}}
+\newlabel{sec:segmentation}{{2.2}{2}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A flow chart of PyGFit{}'s procedure. Rectangles denote computational processes executed by PyGFit{} while the page symbols denote data products created by or used by PyGFit{}. The five data products along the top are inputs which must be provided to PyGFit{}.}}{3}{}}
+\newlabel{fig:flow_chart}{{1}{3}{}{}{}}
+\citation{peng02}
+\citation{peng02}
+\citation{peng10}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Catalog Alignment}{4}{}}
+\newlabel{sec:alignment}{{2.3}{4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Fitting}{4}{}}
+\newlabel{sec:fitting_procedure}{{2.4}{4}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Cutouts}{4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Model Generation}{4}{}}
+\newlabel{sec:modeling}{{2.4.2}{4}{}{}{}}
+\citation{mancone13}
+\citation{galapagos}
+\citation{irac}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}Fitting}{5}{}}
+\newlabel{sec:fitting}{{2.4.3}{5}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Final Catalog Output}{5}{}}
+\newlabel{sec:catalog}{{2.5}{5}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Applying PyGFit to Real Data}{5}{}}
+\newlabel{sec:example}{{3}{5}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Original images (top row) and residuals (bottom row) from our GALFIT{} and PyGFit{} runs in the core of a high redshift ($z=1.243$) galaxy cluster. From left to right the images correspond to WFC3/F160W, R, H, and $4.5\mu $m. The WFC3/F160W image was fit with GALFIT{}, while all other bands were fit with PyGFit{}. All panels show the same field of view, and the scale in the top left panel is 10$^{\prime \prime }$ long.}}{6}{}}
+\newlabel{fig:residuals}{{2}{6}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Three examples of cases where PyGFit{} can fail. The top row of panels shows the F160W images used to create the HRC. The center row of panels shows the LRI with the same field of view, while the bottom row of panels shows the residuals of the LRI after fitting. The LRI for the left uses ground-based R band imaging, while the example in the center is taken from the $4.5\mu $m imaging and the example on the right is taken from the IRAC $3.6\mu $m imaging. The left column shows a galaxy with extended features which cannot be described by a S\'{e}rsic{} profile. The center column shows a galaxy which is isolated in F160W but which is blended with another source in $4.5\mu $m. The right column shows a galaxy near the edge of the F160W image which is blended with a bright source which is outside of the F160W image. Further details are in the text.}}{7}{}}
+\newlabel{fig:problems}{{3}{7}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Simulations}{7}{}}
+\newlabel{sec:sims}{{4}{7}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Simulation Results}{8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusions}{8}{}}
+\newlabel{sec:conclusions}{{5}{8}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces (Top) Input magnitude versus input magnitude minus output magnitude as measured by PyGFit{} simulations for three filters: R (left), J (center), and $3.6\mu $m (right). (Bottom) Magnitude error as a function of magnitude. The solid circles show the uncertainty of PyGFit{}'s magnitude estimates in magnitude bins. For comparison the open circles show the resulting error when a $4^{\prime \prime }$ diameter aperture-magnitude is used instead of PyGFit{}. The solid line shows the uncertainty introduced by sky noise for an aperture with a $4^{\prime \prime }$ diameter.}}{9}{}}
+\newlabel{fig:mag_sims}{{4}{9}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Difference between input and output magnitude for simulated galaxies as a function of flux ratio (left) and separation relative to the size of the PSF (right). To cleanly separate the two competing effects the left panel only includes galaxies separated by at least 1 PSF FWHM, and the right panel only includes galaxies which are the brightest galaxy in the pair.}}{9}{}}
+\newlabel{fig:close_sim}{{5}{9}{}{}{}}
+\bibdata{pygfit}
+\bibstyle{apj}
+\newlabel{LastPage}{{}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Same as Figure 4{}{}{}\hbox {}, except simulated galaxies with separations $<60\%$ of the PSF radius or flux ratios $<0.25$ have been cut from the sample.}}{10}{}}
+\newlabel{fig:mag_sims_cut}{{6}{10}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces PyGFit{} errors as measured with our simulations for our $3.6\mu $m galaxies with $[3.6] < 19.0$ versus the number of objects in the blend (top left), the distance to the nearest blended object (top right), the flux ratio between the object and its nearest neighbor (bottom right), and the fraction of the blend flux accounted for by the simulated object (bottom left).}}{10}{}}
+\newlabel{fig:ch1_error_correlations}{{7}{10}{}{}{}}

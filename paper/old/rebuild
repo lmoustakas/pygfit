@@ -1,0 +1,7 @@
+#! /bin/sh
+
+latex paper
+bibtex paper
+latex paper
+latex paper
+dvips paper
