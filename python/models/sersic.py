@@ -23,16 +23,14 @@ class sersic(point.point):
 	b = 0.0		# b (calculated from sersic index)
 	mu = 0.0	# surface brightness
 	
+	flux_re = 0.0	# flux within a circle of radius re
+	mag_re = 0.0	# magnitude within a circle of radius re
+	
 	# computation parameters
-	max_rebin_factor = 200		# don't rebin by more than this
-	sample_factor = 20.0		# Always want re to be sample_factor larger than the pixels
-	reduction_factor = 10.0		# Don't need the sampling to be as good away from the object center (only 1/reduction_factor as good)
-	nre = 2				# number of effective radii to treat with higher pixel sampling
-
-	# rebinning for the central pixel (similar to above)
-	central_factor = 200.0		# for the central pixel make sure re is central_factor larger than the sub pixels
-	min_central_rebin = 200		# make sure to at least resample the central pixel by min_central_rebin
-	max_central_rebin = 750		# don't rebin the central pixel more than this (overrides min_central_rebin)
+	max_rebin_factor = 200
+	sample_factor = 20.0	# Always want re to be sample_factor larger than the pixels
+	reduction_factor = 10.0	# Don't need the sampling to be as good away from the object center (only 1/reduction_factor as good)
+	nre = 2			# number of effective radii to treat with higher pixel sampling
 
 	##########
 	## init ##
@@ -55,7 +53,6 @@ class sersic(point.point):
 		self.ba = data['ba']
 		self.c = 0
 		if data.has_key( 'c' ): self.c = c
-		self.id = data['id']
 
 		# parameter checks
 		if self.c + 2.0 == 0: raise ValueError( 'Invalid value for c!' )
@@ -106,55 +103,26 @@ class sersic(point.point):
 	####################
 	## generate model ##
 	####################
-	def generate_model( self, pad, img_shape, psf, shift=True, use_integration=True ):
-		""" sersic.generate_model( pad, img_shape, psf, use_integration=True )
+	def generate_model( self, pad, img_shape, psf, shift=True ):
+		""" sersic.generate_model( pad, img_shape, psf )
 		
 		Generate the model and store it in the object. Pass the padding length, the psf, and the x/y arrays (for the padded array, and gblend.y)
-		pad:			the padding length
-		img_shape:		img.shape (for the lres cutout)
-		psf:			the psf image
-		use_integration:	Whether or not to use integration to properly calculate the hard-to-estimate sersic models
+		pad:		the padding length
+		img_shape:	img.shape (for the lres cutout)
+		psf:		the psf image
 		"""
 
 		( x, y ) = self.generate_xy( img_shape, pad )
 
 		(height,width) = x.shape
 
-		"""
-		the trickiness with sersic model generation is the trade off
-		between computation speed and fidelity.  We would like to just
-		calculate the value of the sersic profile at the center of each
-		pixel.  That would be fast.  But for regions where the sersic
-		model changes quickly, it can be a very poor approximation for
-		the average flux of the sersic model through that particular
-		pixel.  This is especially true for models with large sersic
-		indexes, which have sharp peaks in the center.  Therefore we
-		need to do finer resampling to properly calculate the average
-		value of the sersic model through the pixels.  This is most
-		important in the center of the model.  Therefore we use very
-		high levels of resampling in the center, with smaller levels
-		(or none) in outer regions.  I have not played extensively
-		with the level of resampling in different regions in an
-		attempt to squeeze out every second of CPU time.  I do know
-		that without very high levels of resampling in the center pixel
-		the best fitting magnitudes can be dramatically wrong: by 2-6
-		magnitudes.  I test this by looking at mag_hres vs mag_initial
-		in the final catalog.  These two should be more or less the same,
-		with mag_initial being slightly (~0.5 mags) fainter because of
-		aperture effects.
-		"""
-
 		# calculate sizes and scales
 		rebin_factor = int( np.round( self.sample_factor/self.re ) )
 		rebin_factor_small = int( float(rebin_factor) / self.reduction_factor )
 
-		if ( rebin_factor_small < 1 ): rebin_factor_small = 1
-		if ( rebin_factor > self.max_rebin_factor ): rebin_factor = self.max_rebin_factor
-		if ( rebin_factor_small > self.max_rebin_factor ): rebin_factor_small = self.max_rebin_factor
-
-		# same for the central pixel
-		rebin_center = int( np.round( self.central_factor/self.re ) )
-		rebin_center = min( self.max_central_rebin, max( self.min_central_rebin, rebin_center ) )
+		if( rebin_factor_small < 1 ): rebin_factor_small = 1
+		if( rebin_factor > self.max_rebin_factor ): rebin_factor = self.max_rebin_factor
+		if( rebin_factor_small > self.max_rebin_factor ): rebin_factor_small = self.max_rebin_factor
 
 		x_cent = np.round( self.img_x )
 		y_cent = np.round( self.img_y )
@@ -208,28 +176,17 @@ class sersic(point.point):
 
 			tmp[ xcpix-dr:xcpix-dr+nxn, ycpix-dr:ycpix-dr+nxn ] = self.shrink_array( self.model( xx, yy, x_cent, y_cent ), nxn, nxn )
 
-		# now use a very high resampling for the central pixel
-		# calculate coordinates of resampled pixels
-		xx = x_cent - 0.5 + (np.arange( rebin_center, dtype='float32' ) + 0.5)/rebin_center
-		yy = y_cent - 0.5 + (np.arange( rebin_center, dtype='float32' ).reshape( (rebin_center,1) ) + 0.5)/rebin_center
-		
-		# then calculate and average sersic model at sub pixels
-		tmp[ xcpix, ycpix ] = self.model( xx, yy, x_cent, y_cent ).sum()/(rebin_center**2.0)
-
-		# on rare occasions the higher pixel sampling is inadequate
-		# and some objects still have wildly wrong magnitudes
-		# this can be checked by comparing the amount of flux
-		# in the calculated model image with the amount of flux
-		# that should be there (i.e. mag).  For wrong calculations,
-		# the model magnitude (mag_initial) will be much brighter,
-		# whereas for normal models, mag_initial should be slighly
-		# fainter (due to aperture effects).  So if we detect an
-		# obvious problem, just go ahead and integrate the
-		# central pixel.  Integration always gets the normalization
-		# right, but is much slower.  Therefore also give the option
-		# to skip it (since these objects are often not real galaxies)
-		mag_initial = -2.5*np.log10( tmp[pad:int(img_shape[0]+pad),pad:int(img_shape[1]+pad)].sum() ) + self.zeropoint
-		if (self.mag - mag_initial > 0.05) and use_integration:
+		# integrate the central pixel
+		# for large n the big peak in the center is hard to integrate so divide up into parts to minimize integral over very center
+		if self.n > 6.5 and self.re < 1:
+			cent = self.re/100
+			tmp[ xcpix, ycpix ] = 0
+			tmp[ xcpix, ycpix ] += scipy.integrate.quadpack.dblquad( self.model, y_cent-0.5, y_cent+0.5, lambda x: x_cent-0.5, lambda x: x_cent-cent, args=( x_cent, y_cent ), epsabs=1e-3 )[0]
+			tmp[ xcpix, ycpix ] += scipy.integrate.quadpack.dblquad( self.model, y_cent-0.5, y_cent+0.5, lambda x: x_cent+cent, lambda x: x_cent+0.5, args=( x_cent, y_cent ), epsabs=1e-3 )[0]
+			tmp[ xcpix, ycpix ] += scipy.integrate.quadpack.dblquad( self.model, y_cent-cent, y_cent-0.5, lambda x: x_cent-cent, lambda x: x_cent+cent, args=( x_cent, y_cent ), epsabs=1e-3 )[0]
+			tmp[ xcpix, ycpix ] += scipy.integrate.quadpack.dblquad( self.model, y_cent+cent, y_cent+0.5, lambda x: x_cent-cent, lambda x: x_cent+cent, args=( x_cent, y_cent ), epsabs=1e-3 )[0]
+			tmp[ xcpix, ycpix ] += scipy.integrate.quadpack.dblquad( self.model, y_cent-cent, y_cent+cent, lambda x: x_cent-cent, lambda x: x_cent+cent, args=( x_cent, y_cent ), epsabs=1e-3 )[0]
+		else:
 			tmp[ xcpix, ycpix ] = scipy.integrate.quadpack.dblquad( self.model, y_cent-0.5, y_cent+0.5, lambda x: x_cent-0.5, lambda x: x_cent+0.5, args=( x_cent, y_cent ), epsabs=1e-3 )[0]
 
 		if shift: tmp = scipy.ndimage.shift( tmp, [self.img_y-y_cent, self.img_x-x_cent] )
@@ -253,11 +210,7 @@ class sersic(point.point):
 		
 		# and extract just the part that overlaps with the cutout
 		self.model_img = self.model_img[pad:int(img_shape[0]+pad),pad:int(img_shape[1]+pad)]
-		# record mag_initial for checking purposes later
 		self.mag_initial = -2.5*np.log10( self.model_img.sum() ) + self.zeropoint
-		# set the warning flag if this looks improperly calculated
-		if self.mag_initial - self.mag < -0.5:
-			self.mag_warning = True
 		self.modeled = True
 
 	###########
@@ -315,7 +268,6 @@ class sersic(point.point):
 			# calculate model in chunks
 			for i in range( nchunks ):
 				model[inds[i]:inds[i+1],:] = self.mu * np.exp( -self.b*( (( ( np.abs( xdiff*cos_pa + ydiff[inds[i]:inds[i+1],:]*sin_pa) )**c2 + ( np.abs( (ydiff[inds[i]:inds[i+1],:]*cos_pa - xdiff*sin_pa) / self.ba) )**c2 )**(1./c2)/self.re)**(1.0/self.n) - 1 ) )
-			
 			return model
 
 	#####################

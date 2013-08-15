@@ -305,7 +305,8 @@ def write_region( filename, ras_in, decs_in, sizes_in, titles=None, color='green
 	title = ''
 	for i in range( n ):
 		if titles is not None: title = ' # text={%s}' % (titles[i])
-		lines[i] = "circle(%f,%f,%f)%s" % (ras[i],decs[i],sizes[i],title)
+		#lines[i] = "circle(%f,%f,%f)%s" % (ras[i],decs[i],sizes[i],title)
+		lines[i] = "point(%f,%f)%s" % (ras[i],decs[i],title)
 	fh = open( filename, 'w' )
 	fh.write( "# Region file format: DS9 version 4.0\nglobal color=%s\nFK5\n" % color )
 	fh.write( "\n".join( lines ) )
