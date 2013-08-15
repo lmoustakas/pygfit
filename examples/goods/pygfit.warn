@@ -1,0 +1,89 @@
+Warnings and errors for pygfit.config at 2013-08-15 08:16:22.540828
+Failed to fit lres id number: 3.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=42 must not exceed M=0
+Failed to fit lres id number: 2.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=24 must not exceed M=0
+Failed to fit lres id number: 59.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=33 must not exceed M=0
+Failed to fit lres id number: 1.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=45 must not exceed M=0
+Failed to fit lres id number: 8.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=15 must not exceed M=0
+Failed to fit lres id number: 81.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=9 must not exceed M=0
+Failed to fit lres id number: 25.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=12 must not exceed M=0
+Failed to fit lres id number: 67.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=15 must not exceed M=0
+Failed to fit lres id number: 10.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=15 must not exceed M=0
+Failed to fit lres id number: 64.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=6 must not exceed M=0
+Failed to fit lres id number: 83.
+Traceback:
+Traceback (most recent call last):
+  File "/Users/leonidas/research/local/python/pygfit/python/gblend.py", line 490, in fit
+    res = scipy.optimize.leastsq( self.residuals, guess, ftol=1.e-13, xtol=1.e-13, full_output=1, epsfcn=1.e-1 )
+  File "/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/site-packages/scipy/optimize/minpack.py", line 278, in leastsq
+    raise TypeError('Improper input: N=%s must not exceed M=%s' % (n,m))
+TypeError: Improper input: N=9 must not exceed M=0

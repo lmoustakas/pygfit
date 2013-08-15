@@ -1,0 +1,5 @@
+# Region file format: DS9 version 4.0
+global color=green
+FK5
+circle(53.128938,-27.822001,0.000028) # text={33.000000}
+circle(53.129083,-27.821631,0.000039) # text={33.000000}

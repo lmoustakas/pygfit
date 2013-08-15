@@ -1,0 +1,43 @@
+LOG of pygfit.config at 2013-08-15 08:16:22.540417
+Run at path: /Users/leonidas/research/projects/pygfit/examples/goods
+
+Starting source extractor
+Generating source extractor parameters file pygfit.param
+sex goods_ch1.fits -c ch1.config -CATALOG_NAME pygfit_lres.cat -WEIGHT_TYPE MAP_RMS -WEIGHT_IMAGE goods_ch1.rms.fits -PARAMETERS_NAME pygfit.param -CATALOG_TYPE FITS_LDAC -CHECKIMAGE_TYPE 'BACKGROUND,SEGMENTATION' -CHECKIMAGE_NAME 'goods_ch1_back.fits,goods_ch1_seg.fits' -MAG_ZEROPOINT 22.416000
+Generating region file pygfit_lres.reg from source extractor output
+Source Extractor done in 0.137407 seconds
+
+Loading low resolution images/data
+Found 131 objects in the low resolution catalog
+Keeping 91 objects found inside the low resolution catalog in magnitude range (10.500000 - 24.000000)
+Keeping 64 objects found inside the low resolution catalog alignment magnitude range (17.000000 - 23.000000)
+Low resolution images/data loaded in 0.031689 seconds
+
+Loading high resolution catalog
+Processed 14176 data lines in the high resolution catalog
+13677 object(s) were outside the ra/dec range of the low resolution catalog
+Kept 499 objects from the high resolution catalog
+High resolution catalog loaded in 0.251027 seconds
+
+Aligning high and low resolution catalogs
+Fit 15 objects to measure high/low resolution catalog alignment in 9.539417 seconds
+Measured offsets (low-high) of (0.351096,0.428035) low resolution pixels (x,y)
+Measured offsets (low-high) of (0.210658,0.256821) arcseconds (x,y)
+
+Preparing images for fitting
+Generating models with 1 threads
+Generated models in 248.392739 seconds
+7 low resolution objects did not match anything in the high resolution catalog
+Matched up 237 high resolution objects to 84 low resolution objects
+Prepared 84 low resolution objects in 250.980916 seconds
+
+Starting fits with 1 threads
+Fit 84 low resolution objects in 20.691045 seconds
+
+Generating output
+Total time for outputting images: 2.102724 seconds
+
+Outputting final catalog
+Total time for outputting final catalog: 0.189067 seconds
+
+pygfit finished in 283.924110 seconds
