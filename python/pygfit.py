@@ -1801,7 +1801,8 @@ class pygfit(object):
 				'hres_pixscale':	{'format': '%12.6e', 'comment': 'Pixel scale for high resolution image, Degrees per pixel'} }
 
 		hres_cat_order = ['model_type','id','ra','dec','mag','point_mag','re','n','pa','ba']
-		form = '%d' if type( self.config['model_type'] ) == type( 0 ) else '%s'
+		#form = '%d' if type( self.config['model_type'] ) == type( 0 ) else '%s'
+		form = '%s'
 		hres_cat = {	'model_type':		{'format': form, 'comment': "Galaxy model type (either 'sersic' or 'point')"},
 				'id':			{'format': form, 'comment': 'Unique id'},
 				'ra':			{'format': form, 'comment': 'Right Ascension'},
