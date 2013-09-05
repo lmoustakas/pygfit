@@ -1,0 +1,92 @@
+\begin{thebibliography}{14}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Bertin} \& {Arnouts}(1996)}]{bertin96}
+{Bertin}, E. \& {Arnouts}, S. 1996, \aaps, 117, 393
+
+\bibitem[{{de Santis} {et~al.}(2007){de Santis}, {Grazian}, {Fontana}, \&
+  {Santini}}]{desantis07}
+{de Santis}, C., {Grazian}, A., {Fontana}, A., \& {Santini}, P. 2007, New
+  Astronomy, 12, 271
+
+\bibitem[{{Dressel}(2011)}]{wfc3handbook}
+{Dressel}, L. 2011, {Wide Field Camera 3 Instrument Handbook, Version 4.0}
+  (Baltimore, MD: STScI)
+
+\bibitem[{{Fazio} {et~al.}(2004){Fazio}, {Hora}, {Allen}, {Ashby}, {Barmby},
+  {Deutsch}, {Huang}, {Kleiner}, {Marengo}, {Megeath}, {Melnick}, {Pahre},
+  {Patten}, {Polizotti}, {Smith}, {Taylor}, {Wang}, {Willner}, {Hoffmann},
+  {Pipher}, {Forrest}, {McMurty}, {McCreight}, {McKelvey}, {McMurray}, {Koch},
+  {Moseley}, {Arendt}, {Mentzell}, {Marx}, {Losch}, {Mayman}, {Eichhorn},
+  {Krebs}, {Jhabvala}, {Gezari}, {Fixsen}, {Flores}, {Shakoorzadeh}, {Jungo},
+  {Hakun}, {Workman}, {Karpati}, {Kichak}, {Whitley}, {Mann}, {Tollestrup},
+  {Eisenhardt}, {Stern}, {Gorjian}, {Bhattacharya}, {Carey}, {Nelson},
+  {Glaccum}, {Lacy}, {Lowrance}, {Laine}, {Reach}, {Stauffer}, {Surace},
+  {Wilson}, {Wright}, {Hoffman}, {Domingo}, \& {Cohen}}]{irac}
+{Fazio}, G.~G., {Hora}, J.~L., {Allen}, L.~E., {Ashby}, M.~L.~N., {Barmby}, P.,
+  {Deutsch}, L.~K., {Huang}, J.-S., {Kleiner}, S., {Marengo}, M., {Megeath},
+  S.~T., {Melnick}, G.~J., {Pahre}, M.~A., {Patten}, B.~M., {Polizotti}, J.,
+  {Smith}, H.~A., {Taylor}, R.~S., {Wang}, Z., {Willner}, S.~P., {Hoffmann},
+  W.~F., {Pipher}, J.~L., {Forrest}, W.~J., {McMurty}, C.~W., {McCreight},
+  C.~R., {McKelvey}, M.~E., {McMurray}, R.~E., {Koch}, D.~G., {Moseley}, S.~H.,
+  {Arendt}, R.~G., {Mentzell}, J.~E., {Marx}, C.~T., {Losch}, P., {Mayman}, P.,
+  {Eichhorn}, W., {Krebs}, D., {Jhabvala}, M., {Gezari}, D.~Y., {Fixsen},
+  D.~J., {Flores}, J., {Shakoorzadeh}, K., {Jungo}, R., {Hakun}, C., {Workman},
+  L., {Karpati}, G., {Kichak}, R., {Whitley}, R., {Mann}, S., {Tollestrup},
+  E.~V., {Eisenhardt}, P., {Stern}, D., {Gorjian}, V., {Bhattacharya}, B.,
+  {Carey}, S., {Nelson}, B.~O., {Glaccum}, W.~J., {Lacy}, M., {Lowrance},
+  P.~J., {Laine}, S., {Reach}, W.~T., {Stauffer}, J.~A., {Surace}, J.~A.,
+  {Wilson}, G., {Wright}, E.~L., {Hoffman}, A., {Domingo}, G., \& {Cohen}, M.
+  2004, \apjs, 154, 10
+
+\bibitem[{{Fern{\'a}ndez-Soto} {et~al.}(1999){Fern{\'a}ndez-Soto}, {Lanzetta},
+  \& {Yahil}}]{soto99}
+{Fern{\'a}ndez-Soto}, A., {Lanzetta}, K.~M., \& {Yahil}, A. 1999, \apj, 513, 34
+
+\bibitem[{{H{\"a}u{\ss}ler} {et~al.}(2011){H{\"a}u{\ss}ler}, {Barden},
+  {Bamford}, \& {Rojas}}]{galapagos}
+{H{\"a}u{\ss}ler}, B., {Barden}, M., {Bamford}, S.~P., \& {Rojas}, A. 2011, in
+  Astronomical Society of the Pacific Conference Series, Vol. 442, Astronomical
+  Data Analysis Software and Systems XX, ed. I.~N. {Evans}, A.~{Accomazzi},
+  D.~J. {Mink}, \& A.~H. {Rots}, 155
+
+\bibitem[{{Komatsu} {et~al.}(2011){Komatsu}, {Smith}, {Dunkley}, {Bennett},
+  {Gold}, {Hinshaw}, {Jarosik}, {Larson}, {Nolta}, {Page}, {Spergel},
+  {Halpern}, {Hill}, {Kogut}, {Limon}, {Meyer}, {Odegard}, {Tucker}, {Weiland},
+  {Wollack}, \& {Wright}}]{komatsu11}
+{Komatsu}, E., {Smith}, K.~M., {Dunkley}, J., {Bennett}, C.~L., {Gold}, B.,
+  {Hinshaw}, G., {Jarosik}, N., {Larson}, D., {Nolta}, M.~R., {Page}, L.,
+  {Spergel}, D.~N., {Halpern}, M., {Hill}, R.~S., {Kogut}, A., {Limon}, M.,
+  {Meyer}, S.~S., {Odegard}, N., {Tucker}, G.~S., {Weiland}, J.~L., {Wollack},
+  E., \& {Wright}, E.~L. 2011, \apjs, 192, 18
+
+\bibitem[{{Labb{\'e}} {et~al.}(2005){Labb{\'e}}, {Huang}, {Franx}, {Rudnick},
+  {Barmby}, {Daddi}, {van Dokkum}, {Fazio}, {Schreiber}, {Moorwood}, {Rix},
+  {R{\"o}ttgering}, {Trujillo}, \& {van der Werf}}]{labbe05}
+{Labb{\'e}}, I., {Huang}, J., {Franx}, M., {Rudnick}, G., {Barmby}, P.,
+  {Daddi}, E., {van Dokkum}, P.~G., {Fazio}, G.~G., {Schreiber}, N.~M.~F.,
+  {Moorwood}, A.~F.~M., {Rix}, H.-W., {R{\"o}ttgering}, H., {Trujillo}, I., \&
+  {van der Werf}, P. 2005, \apjl, 624, L81
+
+\bibitem[{{Laidler} {et~al.}(2007){Laidler}, {Papovich}, {Grogin}, {Idzi},
+  {Dickinson}, {Ferguson}, {Hilbert}, {Clubb}, \& {Ravindranath}}]{tfit}
+{Laidler}, V.~G., {Papovich}, C., {Grogin}, N.~A., {Idzi}, R., {Dickinson}, M.,
+  {Ferguson}, H.~C., {Hilbert}, B., {Clubb}, K., \& {Ravindranath}, S. 2007,
+  \pasp, 119, 1325
+
+\bibitem[{{Makovoz} \& {Marleau}(2005)}]{mopex}
+{Makovoz}, D. \& {Marleau}, F.~R. 2005, \pasp, 117, 1113
+
+\bibitem[{{Mancone et al.}(submitted)}]{mancone13}
+{Mancone et al.}, C. submitted, \apj, 701, 428
+
+\bibitem[{{Peng} {et~al.}(2002){Peng}, {Ho}, {Impey}, \& {Rix}}]{peng02}
+{Peng}, C.~Y., {Ho}, L.~C., {Impey}, C.~D., \& {Rix}, H.-W. 2002, \aj, 124, 266
+
+\bibitem[{{Peng} {et~al.}(2010){Peng}, {Ho}, {Impey}, \& {Rix}}]{peng10}
+---. 2010, \aj, 139, 2097
+
+\bibitem[{{Stetson}(1987)}]{stetson87}
+{Stetson}, P.~B. 1987, \pasp, 99, 191
+
+\end{thebibliography}
