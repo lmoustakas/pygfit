@@ -26,4 +26,7 @@ Required python packages:
 Also required:
 - Source Extractor
 
+To Install:
+- git clone git@github.com:lmoustakas/pygfit.git
+- python setup.py install
 
