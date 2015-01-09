@@ -1,17 +1,29 @@
 pygfit
 ======
-[Note: To stage this repository at github, I first had to increase the size limit via
-git config http.postBuffer 524288000
-]
+HISTORY
+- 2013 Jun  7 - github setup
+- 2015 Jan  8 - astropy affiliate package setup
 
-Update 7 June 2013
+NOTES
+- Because of FITS etc examples, increased buffer size was required, http.postBuffer 524288000
 
-AHG: First use of repository 7 June 2013
+Package for utilizing existing quantitative morphology (galfit format) catalogs as positional and structure priors, for measuring accurate photometry in corresponding lower-resolution imaging. 
 
-* 10 June 2013
-LAM - working on getting pygfit to work, by checking on supporting packages
-that I need to update or download.
+Input needed:
+- Quantitative morphologies catalog (ascii or FITS)
+- Low resolution image
+- PSF for low resolution image
+- RMS map for low resolution image
+- Pygfit configuration file
 
-Missing: match
+Required python packages:
+- astropy
+- scipy
+- numpy
+- matploglib
+- pyfits
+
+Also required:
+- Source Extractor
 
 
