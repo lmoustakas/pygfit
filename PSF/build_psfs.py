@@ -1,14 +1,15 @@
 #!/usr/bin/python
 
-import psf,dataio,match,pyfits,os
+import psf,dataio,match,os
+from astropy.io import fits as pyfits
 import matplotlib.pyplot as pyplot
 
 # Proper use:
 #  1. Use ds9 to generate a list of stars that you wish to use as input (xy format, wcs decimal coords0
 #  2. Run SExtractor to generate a catalog that contains XWIN_WORLD, YWIN_WORLD
-#  3. Run build_psf.py
+#  3. Run build_psfs.py
 #  4. Look at the output postscript figures to identify stars that should be excluded, modify star list,
-#      and rerun buildpsf.
+#      and rerun build_psfs.py
 
 # first make a long list of potential plotting line styles
 colors = ['k','b','r','g','c','m']
