@@ -3,6 +3,7 @@ pygfit
 HISTORY
 - 2013 Jun  7 - github setup
 - 2015 Jan  8 - astropy affiliate package setup
+- 2015 Mar  1 - added PSF module
 
 NOTES
 - Because of FITS etc examples, increased buffer size was required, http.postBuffer 524288000
@@ -18,10 +19,10 @@ Input needed:
 
 Required python packages:
 - astropy
+  astropy.io.fits (aliased to "pyfits" in code)
 - scipy
 - numpy
-- matploglib
-- pyfits
+- matplotlib
 
 Also required:
 - Source Extractor
