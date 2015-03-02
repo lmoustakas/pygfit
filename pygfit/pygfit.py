@@ -1682,7 +1682,8 @@ class pygfit(object):
 		near_max = cat['nearest'][sind[-1*int( np.ceil(diffs.size*0.05) )]]
 
 		# generate output plots for all objects, sersics, and points
-		ms = []; files = [ 'all.ps', 'point.ps', 'sersic.ps' ]
+		# ms = []; files = [ 'all.ps', 'point.ps', 'sersic.ps' ]
+		ms = []; files = [ 'all.pdf', 'point.pdf', 'sersic.pdf' ]
 		ms.append( np.ones( cat['mag'].size, dtype='bool' ) )
 		ms.append( cat['model'] == 'point' )
 		ms.append( cat['model'] == 'sersic' )
@@ -1718,7 +1719,7 @@ class pygfit(object):
 			pyplot.ylabel( 'Mag (In - Out)' )
 			#pyplot.axis( ymin=ymin, ymax=ymax )
 
-			if file != 'point.ps':
+			if file != 'point.pdf':
 				# re versus mag diff
 				pyplot.subplot( 2, 2, 3 )
 				pyplot.plot( cat['re_arcsecs'][g], diffs[g], 'bo' )
@@ -1771,7 +1772,7 @@ class pygfit(object):
 		pyplot.ylabel( 'Mag (In - Out)' )
 		pyplot.axis( ymin=ymin, ymax=ymax )
 		pyplot.gcf().set_size_inches( (11.0,7.5) )
-		pyplot.savefig( '%s/mag.ps' % self.sim_dir, orientation='landscape' )
+		pyplot.savefig( '%s/mag.pdf' % self.sim_dir, orientation='landscape' )
 		pyplot.clf()
 
 	###################
